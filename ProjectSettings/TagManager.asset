@@ -7,6 +7,9 @@ TagManager:
   - Purple
   - Enemy
   - Hatches
+  - Friend
+  - Heart
+  - Joker
   layers:
   - Default
   - TransparentFX

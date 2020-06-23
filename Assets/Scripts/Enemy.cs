@@ -21,4 +21,9 @@ public class Enemy : MonoBehaviour
     {
         enemyRigidbody.AddForce(Vector3.back * moveSpeed, ForceMode.Acceleration);
     }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
 }
