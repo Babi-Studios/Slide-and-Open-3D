@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Purple
   - Enemy
+  - Hatches
   layers:
   - Default
   - TransparentFX

@@ -1,34 +1,69 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameObject[] lanes;
+    public int startingLaneIndex;
 
-    Manhole [] manholes;
-    // Start is called before the first frame update
+    private int currentLaneIndex;
+    private List<Hatch> hatches;
+
     void Start()
     {
-        manholes = FindObjectsOfType<Manhole>();
+        currentLaneIndex = lanes.Length / 2;
+        ChangeLane(lanes[currentLaneIndex]);
     }
 
-    // Update is called once per frame
     void Update()
     {
         CheckInput();
     }
+
     private void CheckInput()
-    { 
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            currentLaneIndex--;
+            if (currentLaneIndex < 0) currentLaneIndex = 0;
+            ChangeLane(lanes[currentLaneIndex]);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            currentLaneIndex++;
+            if (currentLaneIndex > lanes.Length - 1) currentLaneIndex = lanes.Length - 1;
+            ChangeLane(lanes[currentLaneIndex]);
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Open();
+            OpenHatches();
         }
     }
-    private void Open()
+
+    private void ChangeLane(GameObject lane)
     {
-        foreach(Manhole manhole in manholes)
+        LeanTween.moveX(gameObject, lane.transform.position.x, 0.3f).setEaseOutExpo();
+        foreach (Transform child in lane.transform)
         {
-            manhole.SignalRotation();
+            if (child.tag == "Hatches")
+            {
+                hatches = new List<Hatch>();
+                foreach(Transform hatch in child.transform)
+                {
+                    hatches.Add(hatch.GetChild(0).GetComponent<Hatch>());
+                    hatches.Add(hatch.GetChild(1).GetComponent<Hatch>());
+                }
+                break;
+            }
+
+        }
+    }
+
+    private void OpenHatches()
+    {
+        foreach(Hatch hatch in hatches)
+        {
+            hatch.SignalRotation();
         }
     }
 }
