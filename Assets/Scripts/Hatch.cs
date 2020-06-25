@@ -46,7 +46,9 @@ public class Hatch : MonoBehaviour
             {
                 currentRotation = 0f;
                 isOpening = false;
+                FindObjectOfType<Player>().IsHatchesOpen(isOpening);
                 isClosing = true;
+                FindObjectOfType<Player>().IsHatchesClose(isClosing);
             }
         }
         if(isClosing)
@@ -62,6 +64,7 @@ public class Hatch : MonoBehaviour
             {
                 currentRotation = 0f;
                 isClosing = false;
+                FindObjectOfType<Player>().IsHatchesClose(isClosing);
             }
         }
 
@@ -74,5 +77,6 @@ public class Hatch : MonoBehaviour
             return;
         }
         isOpening = true;
+        FindObjectOfType<Player>().IsHatchesOpen(isOpening);
     }
 }

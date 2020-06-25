@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4467736350191634916}
   - component: {fileID: 4467736350191634919}
   - component: {fileID: -6894341151198858571}
+  - component: {fileID: 825944481334957860}
   m_Layer: 0
   m_Name: Friend
   m_TagString: Friend
@@ -135,5 +136,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70ba40b2590764c4480d0f4dd25c24c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &825944481334957860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4467736350191634918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4fa7eb743aed94488433e0fd0018cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
