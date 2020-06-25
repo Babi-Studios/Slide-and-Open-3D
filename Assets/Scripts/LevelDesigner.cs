@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelDesigner : MonoBehaviour
@@ -40,6 +41,11 @@ public class LevelDesigner : MonoBehaviour
     }
     public void HeartDecreaser()
     {
+        if(hearts<=0)
+        {
+            SceneManager.LoadScene("Game Over");
+            return; 
+        }
         hearts -= 1;
         heartsText.text = hearts.ToString("0");
     }
