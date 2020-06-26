@@ -9,9 +9,6 @@ public class Player : MonoBehaviour
     private int currentLaneIndex;
     private List<Hatch> hatches;
 
-    bool isOpening;
-    bool isClosing;
-
     void Start()
     {
         currentLaneIndex = lanes.Length / 2;
@@ -39,10 +36,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!isClosing && !isOpening)
-            {
-                OpenHatches();
-            }
+            OpenHatches();
         }
     }
 
@@ -69,30 +63,8 @@ public class Player : MonoBehaviour
     {
         foreach(Hatch hatch in hatches)
         {
-            hatch.SignalRotation();
+            hatch.Open();
         }
-    }
-
-    public void IsHatchesOpen(bool isHatchesOpening)
-    {
-        if(isHatchesOpening)
-        {
-            isOpening = true;
-        }
-        if(!isHatchesOpening)
-        {
-            isOpening = false;
-        }
-    }
-    public void IsHatchesClose(bool isHatchesClosing)
-    {
-        if (isHatchesClosing)
-        {
-            isClosing = true;
-        }
-        if (!isHatchesClosing)
-        {
-            isClosing = false;
-        }
+        Hatch.AllHatchesAreClosed = false;
     }
 }

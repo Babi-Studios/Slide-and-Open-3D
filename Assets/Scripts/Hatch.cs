@@ -2,9 +2,11 @@
 
 public class Hatch : MonoBehaviour
 {
+    public static bool AllHatchesAreClosed = true;
+
     public bool isPurple;
 
-    bool isOpening=false;
+    bool isOpening = false;
     bool isClosing = false;
     float currentRotation = 0f;
 
@@ -30,25 +32,24 @@ public class Hatch : MonoBehaviour
             target.z -= transform.localScale.y / 2;
         }
     }
+
     private void Update()
     {
 
         if(isOpening)
         {
             float delta = Time.deltaTime * OPENING_SPEED;
-            if(currentRotation+delta>MAX_ANGLE)
+            if(currentRotation + delta > MAX_ANGLE)
             {
                 delta = MAX_ANGLE - currentRotation;
             }
             currentRotation += delta;
             transform.RotateAround(target, axis, delta);
-            if(currentRotation>=MAX_ANGLE)
+            if(currentRotation >= MAX_ANGLE)
             {
                 currentRotation = 0f;
                 isOpening = false;
-                FindObjectOfType<Player>().IsHatchesOpen(isOpening);
                 isClosing = true;
-                FindObjectOfType<Player>().IsHatchesClose(isClosing);
             }
         }
         if(isClosing)
@@ -59,24 +60,22 @@ public class Hatch : MonoBehaviour
                 delta = MAX_ANGLE - currentRotation;
             }
             currentRotation += delta;
-            transform.RotateAround(target, axis*-1, delta);
+            transform.RotateAround(target, axis * -1, delta);
             if (currentRotation >= MAX_ANGLE)
             {
                 currentRotation = 0f;
                 isClosing = false;
-                FindObjectOfType<Player>().IsHatchesClose(isClosing);
+                AllHatchesAreClosed = true;
             }
         }
-
     }
 
-    public void SignalRotation()
+    public void Open()
     {
-        if(isClosing)
+        if(isClosing || !AllHatchesAreClosed)
         {
             return;
         }
         isOpening = true;
-        FindObjectOfType<Player>().IsHatchesOpen(isOpening);
     }
 }

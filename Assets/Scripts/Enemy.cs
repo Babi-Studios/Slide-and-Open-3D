@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
         Move();
     }
 
-    private void Move() 
+    private void Move()
     {
         enemyRigidbody.AddForce(Vector3.back * moveSpeed, ForceMode.Acceleration);
     }
