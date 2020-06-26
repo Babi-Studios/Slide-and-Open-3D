@@ -9,7 +9,7 @@ public class NumericalTextHandler : MonoBehaviour
     private Text t;
     private int numeric;
 
-    void Start()
+    void Awake()
     {
         t = GetComponent<Text>();
     }
