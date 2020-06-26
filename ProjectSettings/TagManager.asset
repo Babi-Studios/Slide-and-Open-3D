@@ -10,6 +10,8 @@ TagManager:
   - Friend
   - Heart
   - Joker
+  - Lives
+  - Points
   layers:
   - Default
   - TransparentFX

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -14,11 +13,6 @@ public class EnemySpawner : MonoBehaviour
     float minInterval = 1f;
     bool avaliableToBeBorn = true;
 
-    bool isEnemyToBeBorn=false;
-    bool isFriendToBeBorn=false;
-    bool isHeartToBeBorn=false;
-    bool isJokerToBeBorn=false;
-
     public float EnemySpawnProbability;
     public float FriendSpawnProbability;
     public float HeartSpawnProbability;
@@ -31,6 +25,7 @@ public class EnemySpawner : MonoBehaviour
             StartCoroutine(SpawnEnemyCoroutine());
         }
     }
+
     private float IntervalRandomizer()
     {
         spawnIntervalRandomizer = Random.Range(minInterval, maxInterval);
@@ -40,49 +35,27 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator SpawnEnemyCoroutine()
     {
         avaliableToBeBorn = false;
-        BallTypeRandomizer();
+        GameObject nextBall = BallTypeRandomizer();
         yield return new WaitForSeconds(IntervalRandomizer());
-        if(isEnemyToBeBorn)
-        {
-            Instantiate(enemy, transform);
-            isEnemyToBeBorn = false;
-        }
-        if (isFriendToBeBorn)
-        {
-            Instantiate(friend, transform);
-            isFriendToBeBorn = false;
-        }
-        if (isHeartToBeBorn)
-        {
-            Instantiate(heart, transform);
-            isHeartToBeBorn = false;
-        }
-        if (isJokerToBeBorn)
-        {
-            Instantiate(joker, transform);
-            isJokerToBeBorn = false;
-        }
+        Instantiate(nextBall, transform);
         avaliableToBeBorn = true;
     }
 
-    private void BallTypeRandomizer()
+    private GameObject BallTypeRandomizer()
     {
         float randomizerFactor = Random.Range(0f, 100f);
-        if(randomizerFactor<EnemySpawnProbability)
+        if(randomizerFactor < EnemySpawnProbability)
         {
-            isEnemyToBeBorn = true;
+            return enemy;
         }
-        else if(randomizerFactor<EnemySpawnProbability+FriendSpawnProbability)
+        if(randomizerFactor < EnemySpawnProbability + FriendSpawnProbability)
         {
-            isFriendToBeBorn = true;
+            return friend;
         }
-        else if(randomizerFactor < EnemySpawnProbability + FriendSpawnProbability+HeartSpawnProbability)
+        if(randomizerFactor < EnemySpawnProbability + FriendSpawnProbability + HeartSpawnProbability)
         {
-            isHeartToBeBorn = true;
+            return heart;
         }
-        else
-        {
-            isJokerToBeBorn = true;
-        }
+        return joker;
     }
 }
