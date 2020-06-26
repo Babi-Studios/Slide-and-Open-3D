@@ -4,7 +4,7 @@ public class Hatch : MonoBehaviour
 {
     public static bool AllHatchesAreClosed = true;
 
-    public bool isPurple;
+    public bool isPurpleHatch;
 
     bool isOpening = false;
     bool isClosing = false;
@@ -12,8 +12,8 @@ public class Hatch : MonoBehaviour
 
     const float MAX_ANGLE= 86;
     const float DELAY = 0;
-    const float OPENING_SPEED = 200f;
-    const float CLOSING_SPEED = 70f;
+    const float OPENING_SPEED = 350f;
+    const float CLOSING_SPEED = 120f;
 
     Vector3 target;
     Vector3 axis;
@@ -21,7 +21,7 @@ public class Hatch : MonoBehaviour
     private void Start()
     {
         target = transform.position;
-        if(isPurple)
+        if(isPurpleHatch)
         {
             axis = Vector3.left;
             target.z += transform.localScale.y / 2;
