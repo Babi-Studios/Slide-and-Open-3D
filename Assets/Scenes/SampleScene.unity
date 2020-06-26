@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 1
+  isPurpleHatch: 1
 --- !u!64 &101160968
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 1
+  isPurpleHatch: 1
 --- !u!1 &245590713
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,7 +867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 0
+  isPurpleHatch: 0
 --- !u!64 &555491685
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1315,7 +1315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 1
+  isPurpleHatch: 1
 --- !u!1 &864559859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,7 +1477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 1
+  isPurpleHatch: 1
 --- !u!64 &938577938
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1733,7 +1733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 0
+  isPurpleHatch: 0
 --- !u!64 &983871820
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1999,7 +1999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 0
+  isPurpleHatch: 0
 --- !u!64 &1077068429
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2497,7 +2497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 0
+  isPurpleHatch: 0
 --- !u!1 &1267264509
 GameObject:
   m_ObjectHideFlags: 0
@@ -2605,7 +2605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 0
+  isPurpleHatch: 0
 --- !u!1 &1307742300
 GameObject:
   m_ObjectHideFlags: 0
@@ -2851,7 +2851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 0
+  isPurpleHatch: 0
 --- !u!64 &1433334281
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3160,7 +3160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 1
+  isPurpleHatch: 1
 --- !u!64 &1543863572
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3529,7 +3529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 1
+  isPurpleHatch: 1
 --- !u!64 &1652737856
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3637,7 +3637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 0
+  isPurpleHatch: 0
 --- !u!64 &1654281241
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3852,7 +3852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 1
+  isPurpleHatch: 1
 --- !u!64 &1710507449
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4385,7 +4385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 0
+  isPurpleHatch: 0
 --- !u!64 &1817956879
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4748,7 +4748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 1
+  isPurpleHatch: 1
 --- !u!64 &1956709713
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5041,7 +5041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 0
+  isPurpleHatch: 0
 --- !u!64 &2081354401
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5149,7 +5149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a08c371c3914a684ba59c7107f3c0046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPurple: 1
+  isPurpleHatch: 1
 --- !u!64 &2103274004
 MeshCollider:
   m_ObjectHideFlags: 0
