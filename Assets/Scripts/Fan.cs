@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class Fan : MonoBehaviour
 {
-    public float force;
-    public Vector3 forceToApply;
+    public float strength;
+    private Vector3 force;
 
     private bool isRotating;
     private List<GameObject> ballsToPush = new List<GameObject>();
 
     private void Update()
     {
-        forceToApply = Quaternion.AngleAxis(transform.eulerAngles.y, Vector3.up) * new Vector3(force, 0, 0);
+        force = Quaternion.AngleAxis(transform.eulerAngles.y, Vector3.up) * new Vector3(strength, 0, 0);
         if (Input.GetKeyDown(KeyCode.W) && !isRotating)
         {
             isRotating = true;
@@ -26,7 +26,7 @@ public class Fan : MonoBehaviour
             ballsToPush.RemoveAll(ball => ball == null);
             foreach (GameObject ball in ballsToPush)
             {
-                ball.GetComponent<Rigidbody>().AddForce(forceToApply);
+                ball.GetComponent<Rigidbody>().AddForce(force);
             }
         }
     }
