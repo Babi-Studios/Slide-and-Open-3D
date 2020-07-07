@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     private int currentLaneIndex;
     private List<Hatch> hatches;
 
+    private bool isChangingLanes;
+
     void Start()
     {
         currentLaneIndex = lanes.Length / 2;
@@ -22,17 +24,20 @@ public class Player : MonoBehaviour
 
     private void CheckInput()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if(!isChangingLanes)
         {
-            currentLaneIndex--;
-            if (currentLaneIndex < 0) currentLaneIndex = 0;
-            ChangeLane(lanes[currentLaneIndex]);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            currentLaneIndex++;
-            if (currentLaneIndex > lanes.Length - 1) currentLaneIndex = lanes.Length - 1;
-            ChangeLane(lanes[currentLaneIndex]);
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                currentLaneIndex--;
+                if (currentLaneIndex < 0) currentLaneIndex = 0;
+                ChangeLane(lanes[currentLaneIndex]);
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                currentLaneIndex++;
+                if (currentLaneIndex > lanes.Length - 1) currentLaneIndex = lanes.Length - 1;
+                ChangeLane(lanes[currentLaneIndex]);
+            }
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -42,7 +47,12 @@ public class Player : MonoBehaviour
 
     private void ChangeLane(GameObject lane)
     {
-        LeanTween.moveX(gameObject, lane.transform.position.x, 0.3f).setEaseOutExpo();
+        isChangingLanes = true;
+        LeanTween.moveX(gameObject, lane.transform.position.x, 0.3f)
+            .setEaseOutExpo()
+            .setOnComplete(() => {
+                isChangingLanes = false;
+            });
         foreach (Transform child in lane.transform)
         {
             if (child.tag == "Hatches")
@@ -55,7 +65,6 @@ public class Player : MonoBehaviour
                 }
                 break;
             }
-
         }
     }
 
